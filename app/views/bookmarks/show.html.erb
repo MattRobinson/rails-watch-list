@@ -1,0 +1,13 @@
+<h1><%= @bookmark.name %></h1>
+
+<% if @bookmark.movies.any? %>
+  <ul>
+    <% @bookmark.movies.each do |movie| %>
+      <li><%= movie.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No movies in this bookmark.</p>
+<% end %>
+
+<%= link_to 'Delete Bookmark', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %>

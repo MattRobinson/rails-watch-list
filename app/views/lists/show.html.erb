@@ -1,0 +1,11 @@
+<h1><%= @list.name %></h1>
+
+<% if @list.movies.any? %>
+  <ul>
+    <% @list.movies.each do |movie| %>
+      <li><%= movie.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No movies in this list.</p>
+<% end %>
